@@ -1,0 +1,42 @@
+project:
+  type: website
+  output-dir: docs
+
+website:
+  title: "My_Website"
+  repo-url: https://github.com/quarto-dev/quarto-demo
+  repo-actions: [edit, issue]
+  navbar:
+    background: primary
+    search: true
+    left:
+      - href: index.qmd
+        text: Home
+      - about.qmd
+
+    tools:
+      - icon: twitter
+        href: https://twitter.com
+      - icon: github
+        menu:
+          - text: Source Code
+            url:  https://code.com
+          - text: Report a Bug
+            url:  https://bugs.com
+  sidebar:
+      style: "docked"
+      search: true
+      contents:
+        - section: "Basics"
+          contents: "*.ipynb"
+        - section: "Layout"
+          contents:
+            - layout.qmd
+            - layout-knitr.qmd
+            - layout-jupyter.qmd
+
+format:
+  html:
+    theme: cosmo
+    css: styles.css
+    toc: true
